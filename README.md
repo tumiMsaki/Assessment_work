@@ -40,3 +40,22 @@ for (let i = 0; i < 42; i++) {
 ```javascript
 text.innerHTML = remind[i].className//className暂定，为后台返回数据
   ``` 
+npm install mysql
+配置连接参数
+```javascript
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'newpass',
+    database: 'remind'
+});
+```
+获取get请求ID
+```javascript
+var params = url.parse(req.url, true).query
+```
+查询数据库
+```javascript
+var query = 'SELECT * FROM remindc where ID = ' + params.ID
+```
+
