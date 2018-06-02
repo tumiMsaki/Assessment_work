@@ -25,7 +25,7 @@
 
 .table tr td {
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 2vw;
     color: darkorange;
     ;
 }
@@ -37,7 +37,7 @@
     display: flex;
     justify-content: space-around;
     line-height: 50px;
-    font-size: 24px;
+    font-size: 2vw;
 }
 
 .contr span {
@@ -47,19 +47,19 @@
 .color {
     position: relative;
     display: block;
-    height: 3px;
+    height: 0.2vw;
     width: 100%;
     background-color: rgb(124, 181, 173);
 }
 
 .week {
     border-top: 1px solid gray;
-    height: 50px;
+    height: 5vw;
     width: 36vw;
     display: flex;
     justify-content: space-around;
-    line-height: 50px;
-    font-size: 24px;
+    line-height: 5vw;
+    font-size: 2vw;
 }
 
 .remind {
@@ -72,4 +72,68 @@
     margin: 0 auto;
 }
 
-;
+@media screen and (max-width: 1000px) {
+    .app {
+        position: absolute;
+        top: 1vh;
+        border-radius: 10px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        width: 98vw;
+        margin: 0 auto;
+    }
+    .table {
+        table-layout: fixed;
+        width: 98vw;
+        border-radius: 10px;
+        background-color: rgb(246, 246, 246);
+    }
+    .table tr {
+        cursor: pointer;
+        height: 9vh;
+    }
+    .table tr td {
+        border-radius: 10px;
+        font-size: 4vw;
+        color: darkorange;
+        ;
+    }
+    .contr {
+        border-radius: 10px 10px 0 0;
+        height: 50px;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        line-height: 50px;
+        font-size: 4vw;
+    }
+    .contr span {
+        cursor: pointer;
+    }
+    .color {
+        position: relative;
+        display: block;
+        height: 0.2vw;
+        width: 100%;
+        background-color: rgb(124, 181, 173);
+    }
+    .week {
+        border-top: 1px solid gray;
+        height: 10vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        line-height: 10vh;
+        font-size: 4vw;
+    }
+    .remind {
+        border-radius: 10px;
+        height: 20vh;
+        width: 98vw;
+        border: 1px solid red;
+        position: relative;
+        z-index: 1500;
+        margin: 0 auto;
+    }
+}

@@ -273,6 +273,17 @@ function classname() {
         remind[i].addEventListener('click', function() {
             if (remind[i].className != 0) {
                 text.innerHTML = remind[i].className;
+                ajax({
+                    method: 'GET',
+                    url: 'http://localhost:8888/',
+                    data: {
+                        ID: remind[i].className,
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        text.innerHTML = "今日之事：" + data;
+                    }
+                });
             }
 
         })
