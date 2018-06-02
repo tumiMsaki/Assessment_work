@@ -1,4 +1,3 @@
-var modules = {}
 
 function ajax(opt) {
     opt = opt || {};
