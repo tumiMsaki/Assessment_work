@@ -12,4 +12,31 @@ js动态生成7*6的table</br>
 for (let i = 0; i < days; i++) {
         daysum.item(i + week).innerHTML = i + 1;
     }
-   ```
+```
+通过元素遍历，若该td的value值大于0，则添加class
+```javascript
+for (let i = 0; i < 42; i++) {
+   if (remind[i].className != 0)
+      remind[i].classList.remove(remind[i].className);
+}
+```
+同时，在切换时间的时候，将class进行更新
+```javascript
+for (let i = 0; i < 42; i++) {
+    if (remind[i].innerHTML > 0) {
+       remind[i].classList.add(year + month + remind[i].innerHTML);
+     }
+}
+```
+将所有td添加监听事件，以便后面进行ajax访问后台
+```javascript
+for (let i = 0; i < 42; i++) {
+    remind[i].addEventListener('click', function() {
+    ...
+     })
+}
+```
+在remind中将后台的到的数据进行输出
+```javascript
+text.innerHTML = remind[i].className//className暂定，为后台返回数据
+  ``` 
