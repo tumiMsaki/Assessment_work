@@ -45,6 +45,10 @@
 }
 
 .color {
+    position: relative;
+    display: block;
+    height: 3px;
+    width: 100%;
     background-color: rgb(124, 181, 173);
 }
 

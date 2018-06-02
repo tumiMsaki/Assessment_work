@@ -40,6 +40,15 @@ window.onload = function createTable(change) {
     var next2 = document.querySelector(".next2");
     var monthvalue2 = document.querySelector(".Date2")
     var monthvalue = document.querySelector(".Date")
+    var remind = document.querySelectorAll(".table td");
+
+
+    for (let i = 0; i < 40; i++) {
+        if (remind[i].innerHTML > 0) {
+            remind[i].classList.add(year + month + remind[i].innerHTML);
+        }
+    }
+
     monthvalue.addEventListener('mouseover', function() {
         var scrollFunc = function(e) {
             e = e || window.event;
@@ -85,6 +94,15 @@ window.onload = function createTable(change) {
                 days = mGetDate(year, month);
                 week = mGetDate2(year, month);
                 inner(year, month, day, week, days);
+                for (let i = 0; i < 40; i++) {
+                    if (remind[i].className != 0)
+                        remind[i].classList.remove(remind[i].className);
+                }
+                for (let i = 0; i < 40; i++) {
+                    if (remind[i].innerHTML > 0) {
+                        remind[i].classList.add(year + month + remind[i].innerHTML);
+                    }
+                }
 
             } else {
                 month++;
@@ -100,6 +118,15 @@ window.onload = function createTable(change) {
                 days = mGetDate(year, month);
                 week = mGetDate2(year, month);
                 inner(year, month, day, week, days);
+                for (let i = 0; i < 40; i++) {
+                    if (remind[i].className != 0)
+                        remind[i].classList.remove(remind[i].className);
+                }
+                for (let i = 0; i < 40; i++) {
+                    if (remind[i].innerHTML > 0) {
+                        remind[i].classList.add(year + month + remind[i].innerHTML);
+                    }
+                }
             }
         };
 
@@ -109,7 +136,6 @@ window.onload = function createTable(change) {
 
     pre.addEventListener('click', function() {
         year--;
-        console.log(month);
         var mydate = (year.toString());
         var mydate2 = (month.toString());
         time.innerHTML = mydate;
@@ -117,6 +143,16 @@ window.onload = function createTable(change) {
         days = mGetDate(year, month);
         week = mGetDate2(year, month);
         inner(year, month, day, week, days);
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].className != 0)
+                remind[i].classList.remove(remind[i].className);
+        }
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].innerHTML > 0) {
+                remind[i].classList.add(year + month + remind[i].innerHTML);
+            }
+        }
+
     })
     next.addEventListener('click', function() {
         year++;
@@ -127,7 +163,19 @@ window.onload = function createTable(change) {
         days = mGetDate(year, month);
         week = mGetDate2(year, month);
         inner(year, month, day, week, days);
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].className != 0)
+                remind[i].classList.remove(remind[i].className);
+        }
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].innerHTML > 0) {
+                remind[i].classList.add(year + month + remind[i].innerHTML);
+            }
+        }
+
     })
+
+
     pre2.addEventListener('click', function() {
         month--;
         if (month < 1) {
@@ -142,6 +190,16 @@ window.onload = function createTable(change) {
         days = mGetDate(year, month);
         week = mGetDate2(year, month);
         inner(year, month, day, week, days);
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].className != 0)
+                remind[i].classList.remove(remind[i].className);
+        }
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].innerHTML > 0) {
+                remind[i].classList.add(year + month + remind[i].innerHTML);
+            }
+        }
+
     })
     next2.addEventListener('click', function() {
         month++;
@@ -157,7 +215,18 @@ window.onload = function createTable(change) {
         days = mGetDate(year, month);
         week = mGetDate2(year, month);
         inner(year, month, day, week, days);
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].className != 0)
+                remind[i].classList.remove(remind[i].className);
+        }
+        for (let i = 0; i < 40; i++) {
+            if (remind[i].innerHTML > 0) {
+                remind[i].classList.add(year + month + remind[i].innerHTML);
+            }
+        }
+
     })
+    classname();
 }
 
 
@@ -169,8 +238,6 @@ function mGetDate(year, month) {
 
 function mGetDate2(year, month) {
     var d = new Date(year + "-" + month + "-" + 01);
-    console.log(d);
-    console.log(d.getDay());
     return d.getDay();
 }
 
@@ -192,10 +259,22 @@ function inner(year, month, day, week, days) {
     }
 
     if (year == year1 && month == month1) {
-        daysum.item(day + week - 1).classList.add("color");
-    } else {
-        if (document.querySelector(".color")) {
-            document.querySelector(".color").classList.remove("color");
-        }
+        var span = document.createElement("span");
+        span.className = "color";
+        daysum.item(day + week - 1).appendChild(span);
+    }
+}
+
+function classname() {
+    var text = document.querySelector(".remind");
+    var remind = document.querySelectorAll(".table td");
+    for (let i = 0; i < 40; i++) {
+
+        remind[i].addEventListener('click', function() {
+            if (remind[i].className != 0) {
+                text.innerHTML = remind[i].className;
+            }
+
+        })
     }
 }
