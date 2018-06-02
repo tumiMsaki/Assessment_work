@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    border-radius: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 36vw;
+    margin: 0 auto;
+}
+
+.table {
+    table-layout: fixed;
+    width: 36vw;
+    border-radius: 10px;
+    background-color: rgb(246, 246, 246);
+}
+
+.table tr {
+    cursor: pointer;
+    height: 6vw;
+}
+
+.table tr td {
+    border-radius: 10px;
+    font-size: 24px;
+    color: darkorange;
+    ;
+}
+
+.contr {
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+    width: 36vw;
+    display: flex;
+    justify-content: space-around;
+    line-height: 50px;
+    font-size: 24px;
+}
+
+.contr span {
+    cursor: pointer;
+}
+
+.color {
+    background-color: rgb(124, 181, 173);
+}
+
+.week {
+    border-top: 1px solid gray;
+    height: 50px;
+    width: 36vw;
+    display: flex;
+    justify-content: space-around;
+    line-height: 50px;
+    font-size: 24px;
+}
+
+.remind {
+    border-radius: 10px;
+    height: 100px;
+    width: 36vw;
+    border: 1px solid red;
+    position: relative;
+    z-index: 1500;
+    margin: 0 auto;
+}
+
+;
