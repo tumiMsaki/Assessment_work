@@ -269,10 +269,8 @@ function classname() {
     var text = document.querySelector(".remind");
     var remind = document.querySelectorAll(".table td");
     for (let i = 0; i < 40; i++) {
-
         remind[i].addEventListener('click', function() {
             if (remind[i].className != 0) {
-                text.innerHTML = remind[i].className;
                 ajax({
                     method: 'GET',
                     url: 'http://localhost:8888/',
@@ -280,7 +278,6 @@ function classname() {
                         ID: remind[i].className,
                     },
                     success: function(data) {
-                        console.log(data);
                         text.innerHTML = "今日之事：" + data;
                     }
                 });

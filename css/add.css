@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    height: 400px;
+    width: 400px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.time {
+    display: block;
+    border: 1px solid #ff0000;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.time p {
+    display: block;
+}
+
+.main {
+    height: 50%;
+    width: 99%;
+}
+
+.submit {
+    height: 40px;
+    width: 100%;
+    display: block;
+    background-color: yellow;
+    font-size: 24px;
+}
