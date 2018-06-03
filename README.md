@@ -2,7 +2,7 @@
 1.实现日历的基本功能√</br>
 2.通过滚轮切换月份以及年份√</br>
 3.点击具体日期出现备忘录（直接在日历下面）√</br>
-4.备忘录编写，通过node链接MySQL并保存</br>
+4.备忘录编写，通过node链接MySQL并保存√</br>
 5.节假日高亮，查询数据库中提前设置的节假日日期，匹配后对前端渲染
 ## 1
 js动态生成7*6的table</br>
@@ -59,4 +59,31 @@ var params = url.parse(req.url, true).query
 var query = 'SELECT * FROM remindc where ID = ' + params.ID
 ```
 节假日高亮想法：</br>
-数据库设定固定时间，进行匹配，若成功则改变Color
+数据库设定固定时间，进行匹配，若成功则改变Color（暂定）</br>
+<br>
+## 编译备忘录
+1.查询是否存在</br>
+```javascript
+var query = 'SELECT * FROM remindc where ID = ' + ss.ID;
+   connection.query(query, function(err, results, fields) {
+     var key2 = results[0]
+       if (key2) {
+         res.write("当天备忘录已存在");
+         res.end();
+} 
+```
+2.若不存在添加
+```javascript
+var addSql = 'INSERT INTO remindc(ID,remin) VALUES(?,?)';
+   var addSqlParams = [ss.ID, ss.remind];
+      connection.query(addSql, addSqlParams, function(err, result) {
+          if (err) {
+             console.log('[INSERT ERROR] - ', err.message);
+                return;
+           } else {
+                res.write("成功");
+                res.end();
+                   }
+})
+```
+
