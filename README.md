@@ -86,4 +86,13 @@ var addSql = 'INSERT INTO remindc(ID,remin) VALUES(?,?)';
                    }
 })
 ```
+## 关于跨域问题
+懒的弄mime，就直接在头文件添加跨域请求(逃
+```javascript
+res.writeHead(200, {
+        'Content-Type': 'application/json;charset=utf-8',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*'
+    })
+    ```
 
